@@ -26,7 +26,7 @@ LAB_IMAGE = "ai-devops-lab:1.0"  # built in the prerequisites/setup guide
 #   docker network inspect ai-devops-lab | grep Gateway
 # The facilitator setup script (facilitator/setup_lab.sh) fills this in
 # automatically before compiling.
-MLFLOW_TRACKING_URI = "http://192.168.49.1:5000"
+MLFLOW_TRACKING_URI = "http://<gateway-ip>:5000"
 
 
 def _with_mlflow_env(task: dsl.PipelineTask) -> dsl.PipelineTask:
