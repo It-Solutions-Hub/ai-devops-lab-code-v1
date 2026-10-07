@@ -48,7 +48,7 @@ def main():
         mlflow.log_metric("accuracy", acc)
         mlflow.log_metric("f1_score", f1)
         mlflow.set_tag("lab_version", args.label)
-        mlflow.sklearn.log_model(clf, artifact_path="model")
+        mlflow.sklearn.log_model(clf, artifact_path="model", skops_trusted_types=["sklearn.tree._tree.Tree"])
 
         print(f"RUN_ID={run.info.run_id}")
         print(f"ACCURACY={acc:.4f}")
